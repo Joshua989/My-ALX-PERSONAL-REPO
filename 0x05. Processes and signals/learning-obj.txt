@@ -1,0 +1,33 @@
+What is a PID
+What is a process
+How to find a process’ PID
+How to kill a process
+What is a signal
+What are the 2 signals that cannot ignored
+
+Sure! Let's explore the answers to your questions:
+
+1. What is a PID?
+   PID stands for Process IDentifier. In a Linux or Unix-like operating system, a PID is a unique numeric identifier assigned to each running process. It serves as a way for the operating system to track and manage processes. PIDs are typically positive integers, and no two processes can have the same PID at the same time.
+
+2. What is a process?
+   A process is an instance of a program that is currently executing on a computer system. It represents the execution of a set of instructions, which may include a single program or multiple programs working together. Each process has its own memory space, system resources, and execution context. Processes are fundamental units of work in an operating system, and they can perform tasks, utilize system resources, and communicate with other processes.
+
+3. How to find a process' PID?
+   There are several ways to find a process' PID in Linux:
+   - Use the `ps` command with options such as `ps aux` or `ps -ef` to list all processes along with their PIDs.
+   - Use the `pgrep` command followed by the process name to search for processes and retrieve their PIDs.
+   - Use the `pidof` command followed by the process name to find the PID of a running process.
+
+4. How to kill a process?
+   To kill a process in Linux, you can use the `kill` command followed by the process' PID. By default, `kill` sends the SIGTERM signal, which politely asks the process to terminate. For example, to kill a process with PID 1234, you can run `kill 1234`. If a process does not respond to SIGTERM, you can use the SIGKILL signal with the `-9` option, which forcefully terminates the process: `kill -9 1234`.
+
+5. What is a signal?
+   In the context of operating systems, a signal is a software interrupt delivered to a process by the operating system or another process. Signals are used for inter-process communication (IPC), process management, and handling events. They can convey various types of information or request specific actions, such as terminating a process, suspending execution, or updating configuration. Signals allow processes to communicate and respond to events or requests asynchronously.
+
+6. What are the two signals that cannot be ignored?
+   The two signals that cannot be ignored are:
+   - SIGKILL (signal number 9): This signal cannot be caught, blocked, or ignored. It immediately terminates the target process. It is commonly used as a last resort to forcefully kill a process that is unresponsive or causing system issues.
+   - SIGSTOP (signal number 19 or 17): This signal causes a process to pause its execution. It cannot be caught or ignored either. Unlike SIGKILL, SIGSTOP does not terminate the process but suspends its execution. The process can be resumed later using the SIGCONT signal.
+
+Understanding PIDs, processes, how to find PIDs, how to kill processes, and the concept of signals is crucial for managing and troubleshooting processes effectively in Linux systems.
